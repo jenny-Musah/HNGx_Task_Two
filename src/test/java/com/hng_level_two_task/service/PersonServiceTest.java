@@ -22,6 +22,7 @@ class PersonServiceTest {
         personRepository.deleteAll();
     }
 
+
     @Test
     void addPerson() {
         AddPersonRequest addPersonRequest = new AddPersonRequest();
