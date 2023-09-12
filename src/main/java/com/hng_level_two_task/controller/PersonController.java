@@ -3,6 +3,7 @@ package com.hng_level_two_task.controller;
 import com.hng_level_two_task.data.dto.AddPersonRequest;
 import com.hng_level_two_task.data.dto.ApiResponse;
 import com.hng_level_two_task.service.PersonService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ public class PersonController {
     private PersonService personService;
 
     @PostMapping
-    public ResponseEntity<ApiResponse> addPerson(@RequestBody AddPersonRequest addPersonRequest){
+    public ResponseEntity<ApiResponse> addPerson(@Valid  @RequestBody AddPersonRequest addPersonRequest){
         return ResponseEntity.ok(personService.addPerson(addPersonRequest));
     }
     @GetMapping("/{user_id}")
