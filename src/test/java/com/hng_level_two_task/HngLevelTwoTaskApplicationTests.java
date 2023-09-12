@@ -1,0 +1,13 @@
+package com.hng_level_two_task;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class HngLevelTwoTaskApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
