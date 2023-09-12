@@ -16,21 +16,30 @@ public class PersonController {
     private PersonService personService;
 
     @PostMapping
-    public ResponseEntity<ApiResponse> addPerson(@Valid  @RequestBody AddPersonRequest addPersonRequest){
+    public ResponseEntity<ApiResponse> addPerson(@Valid  @RequestBody AddPersonRequest addPersonRequest, @RequestParam("name") String name){
+        if(name != null){
+            AddPersonRequest addPersonRequest1 = new AddPersonRequest();
+            addPersonRequest1.setName(name);
+            return ResponseEntity.ok(personService.addPerson(addPersonRequest1));
+        }
         return ResponseEntity.ok(personService.addPerson(addPersonRequest));
     }
     @GetMapping("/{user_id}")
-    public ResponseEntity<ApiResponse> getPerson( @PathVariable Long user_id){
+    public ResponseEntity<ApiResponse> getPerson( @PathVariable Long user_id, @RequestParam("name") String name){
+        if(name != null)return ResponseEntity.ok(personService.getPerson(personService.findPersonByName(name).getId()));
         return ResponseEntity.ok(personService.getPerson(user_id));
     }
 
     @PatchMapping("/{user_id}")
-    public ResponseEntity<ApiResponse> updatePerson(@PathVariable Long user_id,@RequestBody AddPersonRequest addPersonRequest){
+    public ResponseEntity<ApiResponse> updatePerson(@PathVariable Long user_id,@RequestBody AddPersonRequest addPersonRequest,
+            @RequestParam("name") String name){
+        if(name != null)return ResponseEntity.ok(personService.updatePerson(addPersonRequest,personService.findPersonByName(name).getId()));
         return ResponseEntity.ok(personService.updatePerson(addPersonRequest, user_id));
     }
 
     @DeleteMapping("/{user_id}")
-    public ResponseEntity<ApiResponse> deletePerson(@PathVariable Long user_id){
+    public ResponseEntity<ApiResponse> deletePerson(@PathVariable Long user_id, @RequestParam("name")String name){
+        if(name != null)return ResponseEntity.ok(personService.deletePerson(personService.findPersonByName(name).getId()));
         return ResponseEntity.ok(personService.deletePerson(user_id));
     }
 

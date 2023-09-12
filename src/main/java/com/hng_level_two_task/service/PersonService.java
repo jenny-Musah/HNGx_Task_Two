@@ -15,6 +15,7 @@ public class PersonService {
     private PersonRepository personRepository;
 
     public ApiResponse addPerson(AddPersonRequest addPersonRequest) {
+        isPersonValid(addPersonRequest.getName());
         Person person = new Person();
         person.setName(addPersonRequest.getName());
         personRepository.save(person);
@@ -41,5 +42,20 @@ public class PersonService {
         Person person = findPerson(user_id);
         personRepository.delete(person);
         return new ApiResponse(ConstantUtils.DELETED_SUCCESSFULLY, true);
+    }
+
+    public Person findPersonByName(String name) {
+        for (Person person : personRepository.findAll()){
+            if(person.getName().equals(name))return person;
+        }
+        throw  new IllegalArgumentException(ConstantUtils.DOES_NOT_EXIST);
+    }
+
+    private void isPersonValid(String name){
+        if(!personRepository.findAll().isEmpty()){
+            for (Person person : personRepository.findAll()){
+                if(person.getName().equals(name)) throw new IllegalArgumentException(ConstantUtils.ALREADY_EXIST);
+            }
+        }
     }
 }
