@@ -19,6 +19,7 @@ public class PersonController {
     public ResponseEntity<ApiResponse> addPerson(@Valid  @RequestBody AddPersonRequest addPersonRequest){
         return ResponseEntity.ok(personService.addPerson(addPersonRequest));
     }
+
     @GetMapping("/{user_id}")
     public ResponseEntity<ApiResponse> getPerson( @PathVariable Long user_id){
         return ResponseEntity.ok(personService.getPerson(user_id));
