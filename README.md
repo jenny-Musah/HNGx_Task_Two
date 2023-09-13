@@ -100,6 +100,15 @@ Response (HTTP 200 OK):
     "successful": false
 }
 ```
+
+Bad Response (HTTP 400 BAD REQUEST):
+* Body:
+```
+{
+    "data": "This person already exist",
+    "successful": false
+}
+```
 *Get a person:*
 
 *This request is flexible and so getting a person can be done with either of this request*
@@ -124,6 +133,15 @@ Response (HTTP 200 OK):
         "name": "Jennifer Musah Mercy"
     },
     "successful": true
+}
+```
+
+Bad Response (HTTP 400 BAD REQUEST):
+* Body:
+```
+{
+    "data": "Invalid details entered",
+    "successful": false
 }
 ```
 *Updated  a person*
@@ -165,6 +183,15 @@ Response (HTTP 200 OK):
     "successful": true
 }
 ```
+
+Bad Response (HTTP 400 BAD REQUEST):
+* Body:
+```
+{
+    "data": "Invalid details entered",
+    "successful": false
+}
+```
 *Delete a person*
 
 *This request is flexible and so deleting a person can be done with either of this request*
@@ -189,6 +216,40 @@ Response (HTTP 200 OK):
     "successful": true
 }
 ```
+
+Bad Response (HTTP 400 BAD REQUEST):
+* Body:
+```
+{
+    "data": "Invalid details entered",
+    "successful": false
+}
+```
+
+Instructions for setting up and deploying the API locally or on a server.
+## Deployment
+*After this project as been set up, following the above guidelines you can as well deploy.
+Deploying this project requires you to have decided what platform  you desire to host the project, 
+if you would be using platforms like render, then here are the steps to take:*
+* add a docker file to the project.
+* Push to a git-hub repo.
+* Go to the Render platform and create an account which is free.
+* Select the project you want to deploy from git and provide all required information.
+* Add all needed environment variables.
+* Then click the deploy button.
+
+*For platforms like Railway these are the steps to take:*
+* Push the project to a git-hub repository.
+* Create a Railway account which is also free.
+* Click on the add a new service button and select form git-hub
+* Link git-hub account to railway account.
+* Select the project you want to deploy from the railway platform.
+* Add a new service, a database, any database of your choice.
+* Get the database connection details.
+* Add it to the deploying project environment variable.
+
+*it would automatically re-deploy and that is all, click on the successfully 
+deployed project and go to settings to generate a domain*
 
 ## Validation
 *The API enforces validation for the name field to ensure it 
