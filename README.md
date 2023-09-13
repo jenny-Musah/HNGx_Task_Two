@@ -4,8 +4,7 @@
 
 ## Table of content
 1. [ Introduction ](#introduction)
-2. [ Getting Started ](#Getting Started)
-
+2. [ Getting Started ](#GettingStarted)
     - [ Prerequisites](#Prerequisites)
     - [ Installation](#Installation)
    
