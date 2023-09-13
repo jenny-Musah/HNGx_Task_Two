@@ -78,8 +78,11 @@ Response (HTTP 200 OK):
 
 ```
 {
-    "data": "This person already exist",
-    "successful": false
+    "data": {
+        "id": 202,
+        "name": "Madam Fola"
+    },
+    "successful": true
 }
 ```
 
@@ -103,7 +106,8 @@ Response (HTTP 200 OK):
 ```
 {
     "data": {
-        "name": "Jennifer Musah Mercy"
+        "id": 202,
+        "name": "Mada"
     },
     "successful": true
 }
@@ -136,7 +140,10 @@ Request:
 Response (HTTP 200 OK):
 ```
 {
-    "data": "Updated Successfully",
+    "data": {
+        "id": 202,
+        "name": "Jennifer Musah Mercy"
+    },
     "successful": true
 }
 ```
