@@ -10,6 +10,9 @@
    
 3. [ Usage](#Usage)
    - [ Endpoints ](#Endpoints)
+4. [ Deployment ](#Deployment)
+5. [ Validation ](#Validation)
+6. [ Error Handling ](#ErrorHandling)
 
 
 ## Introduction
