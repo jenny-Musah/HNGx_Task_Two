@@ -44,12 +44,6 @@ public class PersonService {
         return new ApiResponse(ConstantUtils.DELETED_SUCCESSFULLY, true);
     }
 
-    public Person findPersonByName(String name) {
-        for (Person person : personRepository.findAll()){
-            if(person.getName().equals(name))return person;
-        }
-        throw  new IllegalArgumentException(ConstantUtils.DOES_NOT_EXIST);
-    }
 
     private void isPersonValid(String name){
         if(!personRepository.findAll().isEmpty()){
