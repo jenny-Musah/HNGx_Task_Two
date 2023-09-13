@@ -8,7 +8,6 @@ import lombok.Data;
 @Data
 public class Person {
 
-    @JsonIgnore
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

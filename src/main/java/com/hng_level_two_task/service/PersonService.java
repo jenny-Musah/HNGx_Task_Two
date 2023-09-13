@@ -18,8 +18,7 @@ public class PersonService {
         isPersonValid(addPersonRequest.getName());
         Person person = new Person();
         person.setName(addPersonRequest.getName());
-        personRepository.save(person);
-        return new ApiResponse(ConstantUtils.ADDED_SUCCESSFULLY, true);
+        return new ApiResponse(personRepository.save(person), true);
     }
 
     public ApiResponse getPerson(Long userId) {
@@ -30,8 +29,7 @@ public class PersonService {
     public ApiResponse updatePerson(AddPersonRequest addPersonRequest, Long userId) {
         Person foundPerson = findPerson(userId);
         foundPerson.setName(addPersonRequest.getName());
-        personRepository.save(foundPerson);
-        return new ApiResponse(ConstantUtils.UPDATED_SUCCESSFULLY, true);
+        return new ApiResponse(personRepository.save(foundPerson), true);
     }
 
     private Person findPerson(Long userId){
