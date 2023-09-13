@@ -62,10 +62,7 @@ mvn clean install
 ### Request and Response Examples
 
 *Create a new person*
-
-*This request is flexible and so adding a new person can be done with either of this request*
-
-Request one:
+Request:
 * Url : `https://hngxtasktwo-production.up.railway.app/api`
 * Method : POST
 * Header :
@@ -76,23 +73,6 @@ Request one:
     "name" : "Madam Fola"
 }
 ```
-
-or
-
-
-Request two:
-* Url : `https://hngxtasktwo-production.up.railway.app/api?name=Kolo welr`
-* Method : POST
-* PARAMETER : `name`
-* Header :
-    * `Content-Type : application/json`
-* Body:
-```
-{
-    "name" : "Madam Fola"
-}
-```
-
 
 Response (HTTP 200 OK):
 
@@ -113,19 +93,10 @@ Bad Response (HTTP 400 BAD REQUEST):
 ```
 *Get a person:*
 
-*This request is flexible and so getting a person can be done with either of this request*
-
-Request one:
+Request:
 * Url : `https://hngxtasktwo-production.up.railway.app/api/user_id`
 * Method : GET
 * PARAMETER : `user_id`
-
-or
-
-Request two:
-* Url : `https://hngxtasktwo-production.up.railway.app/api/user_id?name=Kolo welr`
-* Method : POST
-* PARAMETER : `name,user_id`
 
 
 Response (HTTP 200 OK):
@@ -148,9 +119,7 @@ Bad Response (HTTP 400 BAD REQUEST):
 ```
 *Updated  a person*
 
-*This request is flexible and so updating a person can be done with either of this request*
-
-Request one:
+Request:
 * Url : `https://hngxtasktwo-production.up.railway.app/api/user_id`
 * Method : PATCH
 * PARAMETER : `user_id`
@@ -163,20 +132,6 @@ Request one:
 }
 ```
 
-or
-
-Request two:
-* Url : `https://hngxtasktwo-production.up.railway.app/api/user_id?name=Kolo welr`
-* Method : POST
-* PARAMETER : `name,user_id`
-* Header :
-    * `Content-Type : application/json`
-* Body:
-```
-{
-    "name" : "Jennifer Musah Mercy"
-}
-```
 
 Response (HTTP 200 OK):
 ```
@@ -196,20 +151,10 @@ Bad Response (HTTP 400 BAD REQUEST):
 ```
 *Delete a person*
 
-*This request is flexible and so deleting a person can be done with either of this request*
-
-Request one:
+Request:
 * Url : `https://hngxtasktwo-production.up.railway.app/api/user_id`
 * Method : PATCH
 * PARAMETER : `user_id`
-
-or
-
-Request two:
-* Url : `https://hngxtasktwo-production.up.railway.app/api/user_id?name=Kolo welr`
-* Method : POST
-* PARAMETER : `name,user_id`
-
 
 Response (HTTP 200 OK):
 ```
@@ -228,7 +173,6 @@ Bad Response (HTTP 400 BAD REQUEST):
 }
 ```
 
-Instructions for setting up and deploying the API locally or on a server.
 ## Deployment
 *After this project as been set up, following the above guidelines you can as well deploy.
 Deploying this project requires you to have decided what platform  you desire to host the project, 
